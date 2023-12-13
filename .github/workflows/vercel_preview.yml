@@ -66,7 +66,7 @@ jobs:
         run: |
           cargo build --verbose
           rustup target add wasm32-unknown-unknown
-          trunk build
+          trunk build --release
       - name: Preview Deploy
         id: deploy
         uses: amondnet/vercel-action@v20

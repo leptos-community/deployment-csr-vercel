@@ -18,12 +18,17 @@ jobs:
         uses: actions/checkout@v3
 
       - uses: dtolnay/rust-toolchain@nightly
+        with:
+          components: clippy, rustfmt
       - uses: Swatinem/rust-cache@v2
-      - uses: jetli/trunk-action@v0.4.0
-      - name: Trunk Build
+      - name: Setup Rust
         run: |
           rustup target add wasm32-unknown-unknown
-          trunk build
+          cargo clippy
+          cargo fmt --check
+
+      - name: Trunk Build
+        run: trunk build --release
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
