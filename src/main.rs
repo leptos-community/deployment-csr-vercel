@@ -42,7 +42,6 @@ fn App(increment: i32) -> impl IntoView {
     <div class="container">
         <h1>"Welcome to Leptos"</h1>
         <h2><i>"On Vercel"</i></h2>
-        <p>"Testing Vercel Previews"</p>
 
         <button
             on:click= move |_| {
