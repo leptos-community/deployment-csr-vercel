@@ -10,7 +10,7 @@ env:
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
 jobs:
-  Deploy-Production:
+  Vercel-Production-Deployment:
     runs-on: ubuntu-latest
     environment: production
     steps:
@@ -47,4 +47,4 @@ jobs:
 
       - name: Display Deployed URL
         run: |
-          echo "Deployed app URL: ${{ steps.deployment.outputs.preview-url }}" >> $GITHUB_STEP_SUMMARY
+          echo "Deployed app URL: ${{ steps.deployment.outputs.production }}" >> $GITHUB_STEP_SUMMARY
