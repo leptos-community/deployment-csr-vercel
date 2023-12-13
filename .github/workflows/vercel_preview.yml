@@ -49,12 +49,16 @@ jobs:
   build-and-preview-deploy:
     runs-on: ubuntu-latest
     name: Build and Preview Deploy
-    needs: [test]
+
+    needs: [Test, Clippy, Rustfmt]
+
     permissions:
       pull-requests: write
+
     environment:
       name: preview
       url: ${{ steps.preview.outputs.preview-url }}
+
     steps:
       - name: git-checkout
         uses: actions/checkout@v3
