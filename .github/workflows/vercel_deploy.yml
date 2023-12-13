@@ -43,7 +43,9 @@ jobs:
       - name: Deploy Project Artifacts to Vercel
         id: deployment
         working-directory: ./dist
-        run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: |
+          vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} >> $GITHUB_STEP_SUMMARY
+          echo $GITHUB_STEP_SUMMARY
 
       - name: Display Deployed URL
         run: |
