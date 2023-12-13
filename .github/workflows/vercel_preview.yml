@@ -51,7 +51,7 @@ jobs:
 
   build-and-preview-deploy:
     runs-on: ubuntu-latest
-    name: Build and Preview Deploy
+    name: Build and Preview
 
     needs: [test, clippy, fmt]
 
