@@ -40,13 +40,9 @@ jobs:
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Deploy Project Artifacts to Vercel
+      - name: Deploy to Vercel & Display URL
         id: deployment
         working-directory: ./dist
         run: |
           vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} >> $GITHUB_STEP_SUMMARY
           echo $GITHUB_STEP_SUMMARY
-
-      - name: Display Deployed URL
-        run: |
-          echo "Deployed app URL: ${{ steps.deployment.outputs.production }}" >> $GITHUB_STEP_SUMMARY
