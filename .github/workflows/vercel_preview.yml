@@ -64,9 +64,15 @@ jobs:
       - uses: jetli/trunk-action@v0.4.0
       - name: Build
         run: |
-          cargo build --verbose
           rustup target add wasm32-unknown-unknown
-          trunk build --release
+
+      - name: Download and install Trunk binary
+        run: wget -qO- https://github.com/trunk-rs/trunk/releases/download/v0.17.5/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
+
+
+      - name: Build with Trunk
+        run: ./trunk build --release
+
       - name: Preview Deploy
         id: deploy
         uses: amondnet/vercel-action@v20

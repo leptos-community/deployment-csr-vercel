@@ -27,8 +27,12 @@ jobs:
           cargo clippy
           cargo fmt --check
 
-      - name: Trunk Build
-        run: trunk build --release
+      - name: Download and install Trunk binary
+        run: wget -qO- https://github.com/trunk-rs/trunk/releases/download/v0.17.5/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
+
+
+      - name: Build with Trunk
+        run: ./trunk build --release
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
