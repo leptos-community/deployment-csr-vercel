@@ -54,7 +54,7 @@ jobs:
       pull-requests: write
     environment:
       name: preview
-      url: ${{ steps.deploy.outputs.preview-url }}
+      url: ${{ steps.preview.outputs.preview-url }}
     steps:
       - name: git-checkout
         uses: actions/checkout@v3
@@ -74,7 +74,7 @@ jobs:
         run: ./trunk build --release
 
       - name: Preview Deploy
-        id: deploy
+        id: preview
         uses: amondnet/vercel-action@v20
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
@@ -83,3 +83,7 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           github-comment: true
           working-directory: ./dist
+
+      - name: Display Deployed URL
+        run: |
+          echo "Deployed app URL: ${{ steps.preview.outputs.app-url }}" >> $GITHUB_STEP_SUMMARY
