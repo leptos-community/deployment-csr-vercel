@@ -28,7 +28,7 @@ jobs:
           cargo fmt --check
 
       - name: Download and install Trunk binary
-        run: wget -qO- https://github.com/trunk-rs/trunk/releases/download/v0.17.5/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
+        run: wget -qO- https://github.com/trunk-rs/trunk/releases/download/v0.18.0/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
 
 
       - name: Build with Trunk
@@ -41,5 +41,10 @@ jobs:
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy Project Artifacts to Vercel
+        id: deployment
         working-directory: ./dist
         run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Display Deployed URL
+        run: |
+          echo "Deployed app URL: ${{ steps.deployment.outputs.url }}" >> $GITHUB_STEP_SUMMARY
