@@ -34,3 +34,4 @@ Both of these actions will need your Vercel credentials setup in GitHub secrets
 
 ### Step 3: Add Github Action Scripts
 
+Finally, you're ready to simply copy and paste the two files in `.github/workflows/` into your own gh workflows folder - then, sit back and watch the magic happen!
