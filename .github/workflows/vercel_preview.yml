@@ -88,7 +88,8 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           github-comment: true
           working-directory: ./dist
+        run: echo $GITHUB_STEP_SUMMARY
 
-      - name: Display Deployed URL
-        run: |
-          echo "Deployed app URL: ${{ steps.preview.outputs.preview-url }}" >> $GITHUB_STEP_SUMMARY
+      # - name: Display Deployed URL
+      #   run: |
+      #     echo "Deployed app URL: ${{ steps.preview.outputs.preview-url }}" >> $GITHUB_STEP_SUMMARY
