@@ -91,4 +91,4 @@ jobs:
 
       - name: Display Deployed URL
         run: |
-          echo "Deployed app URL: ${{ steps.preview.outputs.app-url }}" >> $GITHUB_STEP_SUMMARY
+          echo "Deployed app URL: ${{ steps.preview.outputs.preview-url }}" >> $GITHUB_STEP_SUMMARY
