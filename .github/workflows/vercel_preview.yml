@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Preview Deploy
 
-    needs: [Test, Clippy, Rustfmt]
+    needs: [test, clippy, fmt]
 
     permissions:
       pull-requests: write
