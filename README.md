@@ -5,9 +5,7 @@
 
 # Deploy Leptos CSR Apps to Vercel
 
-## Vercel setup
-
-### Step 1: Set Up
+### Step 1: Set Up Vercel
 
 In the Vercel Web UI...
 1. Create a new project
@@ -18,7 +16,7 @@ In the Vercel Web UI...
 <img src="https://private-user-images.githubusercontent.com/25432120/243539590-aa0322d4-1547-4344-afb0-e38c6d3ac449.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDI0Mjk3NDksIm5iZiI6MTcwMjQyOTQ0OSwicGF0aCI6Ii8yNTQzMjEyMC8yNDM1Mzk1OTAtYWEwMzIyZDQtMTU0Ny00MzQ0LWFmYjAtZTM4YzZkM2FjNDQ5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzEyMTMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMjEzVDAxMDQwOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTEwMmQ5MWQ3YWM4NTE0ZDg2MWZjNmFhZDM0ODA4ZjgyNjAxZDc3YzQ2Y2QyNzZhMzlmOGExMmYxYTg0MzIxZTAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.PAOig90xs8swtQRaozeIAlNYdqd3FUsQasHcvgyWaSs" />
 
 
-### Step 2: Setup Vercel credentials for GitHub Actions
+### Step 2: Add Vercel Credentials for GitHub Actions
 
 Both of these actions will need your Vercel credentials setup in GitHub secrets
 
